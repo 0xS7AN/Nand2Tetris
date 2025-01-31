@@ -23,7 +23,7 @@ CHIP Memory {
     PARTS:
     DMux(in=load, sel=address[14], a=loadMain, b=loadScreen);
 
-	RAM16K(in=in, load=loadMain, address=address[0..13], out=outMain);
+    RAM16K(in=in, load=loadMain, address=address[0..13], out=outMain);
     Screen(in=in, load=loadScreen, address=address[0..12], out=outScreen);
     Keyboard(out=outKbd);
     
