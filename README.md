@@ -7,4 +7,4 @@ My attempt to build a general-purpose computer system and a modern software hier
 * [Project 4: Machine Language](https://github.com/0xS7AN/Nand2Tetris/tree/main/04)
 * [Project 5: Computer](https://github.com/0xS7AN/Nand2Tetris/tree/main/05)
 * [Project 6: Assembler](https://github.com/0xS7AN/Nand2Tetris/tree/main/06)
-* [VM I: Stack Arithmetic](https://github.com/0xS7AN/Nand2Tetris/tree/main/07)
+* [Project 7: VM I Stack Arithmetic](https://github.com/0xS7AN/Nand2Tetris/tree/main/07)
