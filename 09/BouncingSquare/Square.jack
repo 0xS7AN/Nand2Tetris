@@ -1,0 +1,109 @@
+class Square {
+    field int x, y, size, speed;
+
+    constructor Square new(int xA, int yA, int sizeA, int speedA) {
+        let x = xA;
+        let y = yA;
+        let size = sizeA;
+        let speed = speedA;
+        do draw();
+        return this;
+    }
+
+    // Square manipulation methods. 
+
+    method void draw() {
+        do Screen.setColor(true);
+        do Screen.drawRectangle(x, y, x + size, y + size);
+        return;
+    }
+
+    method void erase() {
+        do Screen.setColor(false);
+        do Screen.drawRectangle(x, y, x + size, y + size);
+        return;
+    }
+
+    method void moveUp() {
+        do erase();
+        let y = y - 1;
+        do draw();
+        return;        
+    }
+
+    method void moveDown() {
+        do erase();
+        let y = y + 1;
+        do draw();
+        return;
+    }
+
+    method void moveLeft() {
+        do erase();
+        let x = x - 1;
+        do draw();            
+        return;
+    }
+
+    method void moveRight() {
+        do erase();
+        let x = x + 1;
+        do draw();
+        return;
+    }
+
+    method void incSize() {
+        if (size < 128) {
+            let size = size + 1;
+        }
+        return;
+    }
+
+    method void decSize() {
+        if (size > 0) {
+            do erase();
+            let size = size - 1;
+        }
+        return;
+    }
+
+    method void incSpeed() {
+        if (speed > 1) {
+            let speed = speed - 10;
+        }
+        return;
+    }
+
+    method void decSpeed() {
+        if (speed < 30000) {
+            let speed = speed + 10;
+        }
+        return;
+    }
+
+    // Clean up method.
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    // Getter functions.
+
+    method int getX() {
+        return x;
+    }
+
+    method int getY() {
+        return y;
+    }
+
+    method int getSize() {
+        return size;
+    }
+
+    method int getSpeed() {
+        return speed;
+    }
+
+}

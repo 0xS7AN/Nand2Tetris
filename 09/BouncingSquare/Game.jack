@@ -1,0 +1,67 @@
+class Game {
+    field Square square;
+    
+    constructor Game new() {
+        let square = Square.new(251, 123, 10, 1000);
+        do Ui.draw();
+        return this;
+    }
+
+    // Main game loop.
+
+    method void run() {
+        var int key, lastKey, i;
+        var boolean exit;
+
+        let exit = false;
+        let key = 130;
+        
+        while (~exit) {
+            let lastKey = Keyboard.keyPressed();
+
+            if (lastKey = 81) {let exit = true;}
+            if (lastKey = 113) {let exit = true;}
+
+            if (lastKey = 68) {do square.incSize();}
+            if (lastKey = 100) {do square.incSize();}
+
+            if (lastKey = 65) {do square.decSize();}
+            if (lastKey = 97) {do square.decSize();}
+
+            if (lastKey = 87) {do square.incSpeed();}
+            if (lastKey = 119) {do square.incSpeed();}
+
+            if (lastKey = 83) {do square.decSpeed();}
+            if (lastKey = 115) {do square.decSpeed();}
+
+            if (lastKey = 130) {let key = lastKey;}
+            if (lastKey = 131) {let key = lastKey;}
+            if (lastKey = 132) {let key = lastKey;}
+            if (lastKey = 133) {let key = lastKey;}
+
+            if (square.getY() < 33) {let key = 133;}
+            if (square.getY() + square.getSize() > 254) {let key = 131;}
+            if (square.getX() < 1) {let key = 132;}
+            if (square.getX() + square.getSize() > 510) {let key = 130;}
+
+            if (key = 131) {do square.moveUp();}
+            if (key = 133) {do square.moveDown();}
+            if (key = 130) {do square.moveLeft();}
+            if (key = 132) {do square.moveRight();}
+
+            let i = 0;
+            while (i < square.getSpeed()) {let i = i + 1;}
+        }
+
+        return;
+    }
+
+    // Memory clean up method.
+
+    method void dispose() {
+        do square.dispose();
+        do Memory.deAlloc(this);
+        return;
+    }
+
+}

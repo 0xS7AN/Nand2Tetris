@@ -1,0 +1,13 @@
+class Main {
+
+    // Starts the program.
+
+    function void main() {
+        var Game game;
+        let game = Game.new();
+        do game.run();
+        do game.dispose();
+        do Screen.clearScreen();
+        return;
+    }
+}

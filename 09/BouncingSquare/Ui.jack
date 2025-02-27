@@ -1,0 +1,12 @@
+class Ui {
+
+    // Loads the UI.
+    
+    function void draw() {
+        do Output.moveCursor(1, 4);
+        do Output.printString("ARROWS = DIRECTION | A/D = SIZE | W/S = SPEED | Q = QUIT");
+        do Screen.drawRectangle(0, 30, 511, 31);
+        return;
+    }
+
+}
